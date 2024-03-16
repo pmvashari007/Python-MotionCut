@@ -73,7 +73,7 @@ class ExpenseTrackerApp:
 
     def load_expenses(self):
         try:
-            with open("Expense Tracker/expenses.csv", "r") as file:
+            with open("expenses.csv", "r") as file:
                 reader = csv.reader(file)
                 for row in reader:
                     self.expenses.append((row[0], row[1], row[2], row[3]))
@@ -82,7 +82,7 @@ class ExpenseTrackerApp:
             pass
 
     def save_expenses_to_csv(self):
-        with open("Expense Tracker/expenses.csv", "w", newline="") as file:
+        with open("expenses.csv", "w", newline="") as file:
             writer = csv.writer(file)
             writer.writerows(self.expenses)
 
